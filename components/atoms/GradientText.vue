@@ -1,0 +1,5 @@
+<template>
+  <span class="bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">
+    <slot />
+  </span>
+</template>
