@@ -10,9 +10,9 @@ export default defineNuxtConfig({
     '@vueuse/motion/nuxt',
     '@nuxt/content'
   ],
-  ui: {
-    global: true,
-  },
+  // ui: {
+  //   global: true,
+  // },
   app: {
     head: {
       title: 'Innovation Leader Portfolio',

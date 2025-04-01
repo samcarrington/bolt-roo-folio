@@ -1,5 +1,5 @@
 <template>
-  <span :class="`tag bg-${color}`">{{ title }}</span>
+  <span :class="`tag bg-${color}-500`">{{ title }}</span>
 </template>
 
 <script setup>

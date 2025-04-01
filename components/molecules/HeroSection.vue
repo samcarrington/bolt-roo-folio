@@ -1,6 +1,6 @@
 <template>
   <section class="min-h-screen flex items-center justify-center">
-    <AnimatedCard :delay="200" class="max-w-2xl">
+    <MoleculesAnimatedCard :delay="200" class="max-w-2xl" :ui="{ background: 'bg-transparent', ring: 'ring-0', shadow: 'shadow-none' }">
       <div class="space-y-4 text-center">
         <h1 class="text-4xl font-bold">
           <AtomsGradientText>Innovation Leadership</AtomsGradientText>
@@ -16,12 +16,11 @@
           @click="navigateToWork"
         />
       </div>
-    </AnimatedCard>
+    </MoleculesAnimatedCard>
   </section>
 </template>
 
 <script setup lang="ts">
-import AnimatedCard from '~/components/atoms/AnimatedCard.vue';
 const navigateToWork = () => {
   navigateTo('/work')
 }

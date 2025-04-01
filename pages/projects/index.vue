@@ -1,28 +1,28 @@
 <template>
-  <section class="projects">
+  <section class="projects my-6">
     <h1>Projects</h1>
-    <div class="projects-container">
-      <AtomsAnimatedCard v-for="(project, index) in projects" 
-      :key="project.id" 
-      :index="index" 
-      class="mb-4"
-      :delay="index * 100"
-      :ui="{
-        base: 'overflow-hidden',
-        background: 'bg-gray-100',
-        shadow: 'shadow-md',
-        rounded: 'rounded-lg',
-        divide: 'divide-y-0',
-        header: 'p-0 rounded-t-lg',
-        body: {
-          padding: 'px-4 py-1 sm:p-5',
-        },
-        ring: 'ring-0',
-      }"
-      :variant="'solid'">
-      <template #cardhead>
-        <img :src="project.image" :alt="project.title">
-      </template>
+    <div class="projects-container mt-6">
+      <MoleculesAnimatedCard v-for="(project, index) in projects" 
+        :key="project.id" 
+        :index="index" 
+        
+        :delay="index * 100"
+        :ui="{
+          base: 'overflow-hidden text-white mb-0', // Add text-white here for global text color
+          background: 'bg-gray-700',
+          shadow: 'shadow-md',
+          rounded: 'rounded-lg',
+          divide: 'divide-y-0',
+          header: 'p-0 rounded-t-lg',
+          body: {
+            padding: 'px-4 py-1 sm:p-5',
+          },
+          ring: 'ring-0',
+        }"
+        :variant="'solid'">
+        <template #cardhead>
+          <img :src="project.image" :alt="project.title">
+        </template>
         <NuxtLink :to="`/projects/${project.slug}`">
           <AtomsProjectHeading :title="project.title" />
           <p v-html="project.excerpt"></p>
@@ -36,7 +36,7 @@
             class="mr-2"
           />
         </template>
-      </AtomsAnimatedCard>
+      </MoleculesAnimatedCard>
     </div>
   </section>
 </template>
@@ -79,12 +79,22 @@ onMounted(async () => {
 </script>
 
 <style scoped>
-.fade-in {
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+.projects-container {
+  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4;
 }
 
-.fade-in.loaded {
-  opacity: 1;
+
+/* .projects-container a {
+  @apply block text-gray-700 border-none outline-none;
+  text-decoration: none;
+} */
+
+.projects-container img {
+  @apply w-full h-48 object-cover mb-2;
 }
+
+.project-category {
+  @apply text-xs font-bold py-1 px-2 rounded-full mt-2 inline-block;
+}
+
 </style>
