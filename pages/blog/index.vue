@@ -1,11 +1,11 @@
 <template>
   <div class="py-12">
     <h1 class="text-3xl font-bold mb-8">
-      <GradientText>Innovation Blog</GradientText>
+      <AtomsGradientText>Innovation Blog</AtomsGradientText>
     </h1>
     <div class="grid gap-6">
       <ContentList path="/blog" v-slot="{ list }">
-        <AnimatedCard v-for="article in list" :key="article._path" :delay="200" class="group">
+        <AtomsAnimatedCard v-for="article in list" :key="article._path" :delay="200" class="group">
           <NuxtLink :to="article._path">
             <h2 class="text-xl font-semibold group-hover:text-primary-500">{{ article.title }}</h2>
             <p class="text-gray-400 mt-2">{{ article.description }}</p>
@@ -17,7 +17,7 @@
               </div>
             </ClientOnly>
           </NuxtLink>
-        </AnimatedCard>
+        </AtomsAnimatedCard>
       </ContentList>
     </div>
   </div>

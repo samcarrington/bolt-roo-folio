@@ -1,3 +1,6 @@
+import dotenv from 'dotenv'
+dotenv.config()
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
@@ -9,7 +12,6 @@ export default defineNuxtConfig({
   ],
   ui: {
     global: true,
-    icons: ['heroicons']
   },
   app: {
     head: {
@@ -22,5 +24,11 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'node-server',
     timing: true
+  },
+  runtimeConfig: {
+    public: {
+      contentfulSpaceId: process.env.CONTENTFUL_SPACE_ID,
+      contentfulToken: process.env.CONTENTFUL_TOKEN
+    }
   }
 })

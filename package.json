@@ -10,11 +10,17 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "nuxt": "^3.13.0",
+    "@contentful/rich-text-html-renderer": "^17.0.0",
     "@nuxt/content": "^2.12.1",
     "@nuxt/ui": "^2.14.2",
     "@vueuse/core": "^10.9.0",
-    "@vueuse/motion": "^2.1.0"
+    "@vueuse/motion": "^2.1.0",
+    "contentful": "^11.5.11",
+    "dotenv": "^16.4.7",
+    "nuxt": "^3.13.0"
   },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
+  "devDependencies": {
+    "@types/node": "^22.13.14"
+  }
 }
