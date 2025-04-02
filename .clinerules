@@ -1,0 +1,33 @@
+# Project Guidelines
+
+## Documentation Requirements
+
+-   Update relevant documentation in /docs when modifying features
+-   Keep README.md in sync with new capabilities
+-   Maintain changelog entries in CHANGELOG.md
+
+## Architecture Decision Records
+
+Create ADRs in /docs/adr for:
+
+-   Major dependency changes
+-   Architectural pattern changes
+-   New integration patterns
+-   Database schema changes
+
+## Code Style & Patterns
+
+-   Always use tailwind utility classes before hand coded CSS attributes
+-   CSS for a component should be in the vue file for that component
+-   Follow the documented best practise for Nuxt UI - use a :ui attribute in a component to customise it
+-   Document functions with JSDoc style headers
+-   Generate API clients using OpenAPI Generator
+-   Use TypeScript axios template
+-   Prefer composition over inheritance
+-   Use repository pattern for data access
+
+## Testing Standards
+
+-   Unit tests required for business logic
+-   Integration tests for API endpoints
+-   E2E tests for critical user flows

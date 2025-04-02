@@ -4,5 +4,5 @@
 </template>
 
 <script setup>
-import WelcomeSection from '~/components/WelcomeSection.vue';
+import WelcomeSection from '~/components/organisms/WelcomeSection.vue';
 </script>

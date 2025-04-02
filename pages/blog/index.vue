@@ -1,23 +1,18 @@
 <template>
   <div class="py-12">
-    <h1 class="text-3xl font-bold mb-8">
-      <AtomsGradientText>Innovation Blog</AtomsGradientText>
-    </h1>
+    
+    <AtomsPageTitle>Innovation Blog</AtomsPageTitle>
+    
     <div class="grid gap-6">
       <ContentList path="/blog" v-slot="{ list }">
-        <AtomsAnimatedCard v-for="article in list" :key="article._path" :delay="200" class="group">
-          <NuxtLink :to="article._path">
-            <h2 class="text-xl font-semibold group-hover:text-primary-500">{{ article.title }}</h2>
-            <p class="text-gray-400 mt-2">{{ article.description }}</p>
-            <ClientOnly>
-              <div class="flex items-center gap-2 mt-4 text-sm text-gray-500">
-                <span>{{ new Date(article.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) }}</span>
-                <span>•</span>
-                <span>{{ article.readingTime }} min read</span>
-              </div>
-            </ClientOnly>
-          </NuxtLink>
-        </AtomsAnimatedCard>
+        <div v-if="list && list.length > 0">
+          <OrganismsBlogArticleList
+            v-for="article in list"
+            :key="article._path"
+            :article="article"
+          />
+        </div>
+        <p v-else class="text-gray-500 py-4">No blog articles available at the moment.</p>
       </ContentList>
     </div>
   </div>
